@@ -7,6 +7,8 @@ import { ContactList } from './ContactList/ContactList';
 import { PhonebookImg } from './PhonebookImg/PhonebookImg';
 import css from './styles/styles.module.css';
 
+const KEY_LOCALSTORAGE = 'contactList';
+
 export class App extends Component {
   state = {
     contacts: [
@@ -19,7 +21,7 @@ export class App extends Component {
   };
 
   componentDidMount() {
-    const contactsFromLocalStorage = localStorage.getItem('contactList');
+    const contactsFromLocalStorage = localStorage.getItem(KEY_LOCALSTORAGE);
     const parsedContacts = JSON.parse(contactsFromLocalStorage);
 
     if (parsedContacts) {
@@ -32,7 +34,7 @@ export class App extends Component {
     const nextStayContacts = this.state.contacts;
 
     if (prevStateContacts !== nextStayContacts) {
-      localStorage.setItem('contactList', JSON.stringify(nextStayContacts));
+      localStorage.setItem(KEY_LOCALSTORAGE, JSON.stringify(nextStayContacts));
     }
   }
 
