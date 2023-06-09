@@ -82,7 +82,7 @@ export class App extends Component {
 
     return (      
       <div className={css.container}>
-        <h1 hidden>HW #2</h1>        
+        <h1 hidden>HW #3</h1>        
         <div className={css.containerPhonebookStyles}>
           <PhonebookImg />
           <section> 
